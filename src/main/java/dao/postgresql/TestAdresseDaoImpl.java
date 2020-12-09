@@ -15,12 +15,14 @@ public class TestAdresseDaoImpl implements TestAdresseDao {
     NamedParameterJdbcTemplate template;
 
     public TestAdresseDaoImpl(NamedParameterJdbcTemplate template) {
+
         this.template = template;
     }
 
 
     @Override
     public List<TestAdresse> findAll() {
+
         return template.query("select * from addresses", new TestAdresseRowMapper());
     }
 
