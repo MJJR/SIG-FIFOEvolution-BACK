@@ -2,7 +2,6 @@ package dao.postgresql;
 
 import dao.RdcDao;
 import mapper.RdcRowMapper;
-import mapper.TestAdresseRowMapper;
 import model.Rdc;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -20,7 +19,7 @@ public class RdcDaoImpl implements RdcDao {
     }
 
     @Override
-    public List<Rdc> findAllRdc()  {
+    public List<Rdc> findAllRdc() {
 
         return template.query("select * from rdc", new RdcRowMapper());
     }

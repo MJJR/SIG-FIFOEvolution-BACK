@@ -3,7 +3,6 @@ package dao.postgresql;
 import dao.TestAdresseDao;
 import mapper.TestAdresseRowMapper;
 import model.TestAdresse;
-import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 

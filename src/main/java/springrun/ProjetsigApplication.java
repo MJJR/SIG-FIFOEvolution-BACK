@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@ComponentScan({"services","dao"})
+@ComponentScan({"services", "dao"})
 @EntityScan("model")
 public class ProjetsigApplication {
 
@@ -19,7 +19,7 @@ public class ProjetsigApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                .allowedMethods("GET");
+                        .allowedMethods("GET");
             }
         };
     }

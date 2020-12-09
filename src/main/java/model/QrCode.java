@@ -7,15 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "etage")
-public class Etage {
+@Table(name = "qrcode")
+public class QrCode {
     @Id
     private int gid;
     private int id;
     private String nom;
     private PGobject geometry;
 
-    public Etage() {
+    public QrCode() {
 
     }
 

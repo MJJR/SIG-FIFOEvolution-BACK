@@ -2,8 +2,6 @@ package mapper;
 
 
 import model.Etage;
-
-import org.geolatte.geom.Geometry;
 import org.postgresql.util.PGobject;
 import org.springframework.jdbc.core.RowMapper;
 
