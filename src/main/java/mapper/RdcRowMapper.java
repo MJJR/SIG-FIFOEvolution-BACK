@@ -1,7 +1,6 @@
 package mapper;
 
 import model.Rdc;
-import org.geolatte.geom.MultiPolygon;
 import org.postgresql.util.PGobject;
 import org.springframework.jdbc.core.RowMapper;
 

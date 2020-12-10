@@ -1,7 +1,7 @@
 package services;
 
-import dao.postgresql.EtageDaoImpl;
-import model.Etage;
+import dao.postgresql.QrCodeDaoImpl;
+import model.QrCode;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,15 +10,15 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
-@RequestMapping("/etage")
-public class EtageService {
+@RequestMapping("/qrcode")
+public class QrCodeService {
 
     @Resource
-    EtageDaoImpl etagedao;
+    QrCodeDaoImpl qrcodedao;
 
-    @GetMapping(value = "/etageList")
-    public List<Etage> getEtage() {
-        return etagedao.findAllEtage();
+    @GetMapping(value = "/qrcodeList")
+    public List<QrCode> getEtage() {
+        return qrcodedao.findAllQrCode();
     }
 
 }

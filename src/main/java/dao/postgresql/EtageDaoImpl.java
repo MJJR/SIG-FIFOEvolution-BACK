@@ -13,7 +13,7 @@ public class EtageDaoImpl implements EtageDao {
 
     NamedParameterJdbcTemplate template;
 
-    public EtageDaoImpl(NamedParameterJdbcTemplate template){
+    public EtageDaoImpl(NamedParameterJdbcTemplate template) {
         this.template = template;
     }
 
@@ -22,7 +22,7 @@ public class EtageDaoImpl implements EtageDao {
         return template.query("select * from etage", new EtageRowMapper());
     }
 
-    public Etage findEtageByName(String name){
+    public Etage findEtageByName(String name) {
         return null;
     }
 

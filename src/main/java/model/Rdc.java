@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="rdc")
+@Table(name = "rdc")
 public class Rdc {
     @Id
     private int gid;
@@ -15,7 +15,7 @@ public class Rdc {
     private String nom;
     private PGobject geometry;
 
-    public Rdc(){
+    public Rdc() {
 
     }
 

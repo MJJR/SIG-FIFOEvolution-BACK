@@ -17,7 +17,7 @@ public class RdcService {
     RdcDaoImpl rdcdao;
 
     @GetMapping(value = "/rdcList")
-    public List<Rdc> getRdc(){
+    public List<Rdc> getRdc() {
 
         return rdcdao.findAllRdc();
     }
