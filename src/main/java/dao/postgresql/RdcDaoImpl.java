@@ -5,7 +5,11 @@ import mapper.QrCodeRowMapper;
 import mapper.RdcRowMapper;
 import model.QrCode;
 import model.Rdc;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -39,7 +43,15 @@ public class RdcDaoImpl implements RdcDao {
 
     @Override
     public void updateRdc(Rdc rdc) {
+        String requete = "update rdc set id=:id, nom=:nom, geom=:geom where gid=:gid";
+        KeyHolder holder = new GeneratedKeyHolder();
+        SqlParameterSource param = new MapSqlParameterSource()
+                .addValue("id", rdc.getId())
+                .addValue("nom", rdc.getNom())
+                .addValue("geom", rdc.getGeometry())
+                .addValue("gid",rdc.getGid());
 
+        template.update(requete, param, holder );
     }
 
     @Override

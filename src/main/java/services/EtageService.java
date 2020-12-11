@@ -3,10 +3,8 @@ package services;
 import dao.postgresql.EtageDaoImpl;
 import model.Bordure;
 import model.Etage;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -26,6 +24,11 @@ public class EtageService {
     @GetMapping(value = "/{name}")
     public Etage getEtageByName(@PathVariable String name){
         return etagedao.findEtageByName(name);
+    }
+
+    @PutMapping(value = "/etageUpdate", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void updateEtage(@RequestBody Etage et){
+        etagedao.updateEtage(et);
     }
 
 }

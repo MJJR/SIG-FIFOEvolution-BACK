@@ -19,7 +19,7 @@ public class ProjetsigApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedMethods("GET");
+                        .allowedMethods("GET,PUT");
             }
         };
     }

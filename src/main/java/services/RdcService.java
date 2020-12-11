@@ -3,10 +3,8 @@ package services;
 import dao.postgresql.RdcDaoImpl;
 import model.Etage;
 import model.Rdc;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -28,5 +26,11 @@ public class RdcService {
     public Rdc getRdcByName(@PathVariable String name){
         return rdcdao.findRdcByName(name);
     }
+
+    @PutMapping(value = "/rdcUpdate", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void updateRdc(@RequestBody Rdc rdc){
+        rdcdao.updateRdc(rdc);
+    }
+
 
 }
