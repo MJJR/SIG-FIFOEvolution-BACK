@@ -25,7 +25,7 @@ public class CheminDaoImpl implements CheminDao {
 
     @Override
     public Chemin findCheminById(int id) {
-        return null;
+        return template.query("select * from chemins where id = "+id, new CheminRowMapper()).get(0);
     }
 
     @Override

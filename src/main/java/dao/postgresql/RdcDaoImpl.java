@@ -1,7 +1,9 @@
 package dao.postgresql;
 
 import dao.RdcDao;
+import mapper.QrCodeRowMapper;
 import mapper.RdcRowMapper;
+import model.QrCode;
 import model.Rdc;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -27,7 +29,7 @@ public class RdcDaoImpl implements RdcDao {
     @Override
     public Rdc findRdcByName(String name) {
 
-        return null;
+        return template.query("select * from rdc where nom = '"+name+"'", new RdcRowMapper()).get(0);
     }
 
     @Override

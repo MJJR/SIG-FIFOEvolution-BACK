@@ -23,7 +23,7 @@ public class BordureDaoImpl implements BordureDao {
     }
 
     public Bordure findBordureById(int id) {
-        return null;
+        return template.query("select * from bordure where id = "+id, new BordureRowMapper()).get(0);
     }
 
     @Override

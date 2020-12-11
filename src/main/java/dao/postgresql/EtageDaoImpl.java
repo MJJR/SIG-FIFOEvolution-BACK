@@ -23,7 +23,8 @@ public class EtageDaoImpl implements EtageDao {
     }
 
     public Etage findEtageByName(String name) {
-        return null;
+
+        return template.query("select * from etage where nom = '"+name+"'", new EtageRowMapper()).get(0);
     }
 
     @Override

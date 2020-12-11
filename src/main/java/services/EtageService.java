@@ -1,8 +1,10 @@
 package services;
 
 import dao.postgresql.EtageDaoImpl;
+import model.Bordure;
 import model.Etage;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +21,11 @@ public class EtageService {
     @GetMapping(value = "/etageList")
     public List<Etage> getEtage() {
         return etagedao.findAllEtage();
+    }
+
+    @GetMapping(value = "/{name}")
+    public Etage getEtageByName(@PathVariable String name){
+        return etagedao.findEtageByName(name);
     }
 
 }

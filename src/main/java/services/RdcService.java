@@ -1,8 +1,10 @@
 package services;
 
 import dao.postgresql.RdcDaoImpl;
+import model.Etage;
 import model.Rdc;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +22,11 @@ public class RdcService {
     public List<Rdc> getRdc() {
 
         return rdcdao.findAllRdc();
+    }
+
+    @GetMapping(value = "/{name}")
+    public Rdc getRdcByName(@PathVariable String name){
+        return rdcdao.findRdcByName(name);
     }
 
 }

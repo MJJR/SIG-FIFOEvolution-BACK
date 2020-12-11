@@ -23,7 +23,8 @@ public class QrCodeDaoImpl implements QrCodeDao {
     }
 
     public QrCode findQrCodeByName(String name) {
-        return null;
+
+        return template.query("select * from qr where nom = '"+name+"'", new QrCodeRowMapper()).get(0);
     }
 
     @Override
