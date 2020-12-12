@@ -14,8 +14,9 @@
     <name>projetsig</name>
     <description>Partie Back du projet SIG nomade</description>
 
+
     <properties>
-        <java.runtime.version>11.0.6</java.runtime.version>
+        <java.version>11.0.6</java.version>
         <maven.compiler.version>3.6.2</maven.compiler.version>
         <maven.compiler.source>11.0.6</maven.compiler.source>
         <maven.compiler.target>11.0.6</maven.compiler.target>
@@ -106,8 +107,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.version}</version>
                 <configuration>
-                    <source>${java.runtime.version}</source>
-                    <target>${java.runtime.version}</target>
+                    <release>11</release>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
         </plugins>
