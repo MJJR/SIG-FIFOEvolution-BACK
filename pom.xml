@@ -14,6 +14,7 @@
     <name>projetsig</name>
     <description>Partie Back du projet SIG nomade</description>
 
+
     <properties>
         <java.runtime.version>11.0.6</java.runtime.version>
         <maven.compiler.version>3.6.2</maven.compiler.version>
@@ -108,6 +109,17 @@
                 <configuration>
                     <source>${java.runtime.version}</source>
                     <target>${java.runtime.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12.4</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <java.runtime.version>11</java.runtime.version>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>
